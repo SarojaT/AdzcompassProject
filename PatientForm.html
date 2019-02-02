@@ -1,0 +1,335 @@
+<html>
+<head>
+<title>Patient Form</title>
+</head>
+<style>
+
+.tdLabel
+
+{
+
+font-size: 20px;
+
+
+}
+
+.tdInput{
+
+width:185px;
+
+height:50px;
+
+}
+
+#providerName{
+
+display:none;
+
+}
+
+#providerNametextBox{
+
+display:none;
+
+}
+
+#providerId{
+
+display:none;
+
+}
+
+#providerIdtextBox{
+
+display:none;
+
+}
+#parentnamelabel{
+
+display:none;
+
+}
+#parent_name_inputbox{
+
+display:none;
+
+}
+#parentphonenolabel{
+
+display:none;
+
+}
+#parent_phone_number_inputbox{
+
+display:none;
+
+}
+
+</style>
+
+<body src="background-image":"patient.jpg">
+
+<h1 align="center">Patient Form</h1>
+
+<form>
+
+<fieldset>
+
+<table align="Center">
+
+<tr>
+
+   <td class="tdLabel"><label for="First_Name" ><b>First Name</b></label></td>
+
+   <td class="tdInput"><input type="text" id="FirstName" name="First_Name"></td>
+
+</tr>
+
+<tr>
+
+   <td class="tdLabel"><label for="Last_Name" ><b>Last Name</b></label></td>
+
+   <td class="tdInput"><input type="text" id="LastName" name="last_Name"></td>
+
+</tr>
+
+<tr>
+
+   <td class="tdLabel"><label><b>Address</b></labe</label></td>
+
+   <td class="tdInput"><textarea rows="4" cols="21"></textarea><br></td>
+
+</tr>
+
+<tr>
+
+   <td class="tdLabel"><label for="city"><b>City</b></label></td>
+
+   <td class="tdInput"><select name="city" id="City" style="width:170px">
+
+   <option value=""></option>
+
+   <option value="ambur">Ambur</option>
+
+   <option value="chennai">Chennai</option>
+
+   <option value="coimbatore">Coimbatore</option>
+
+   <option value="erode">Erode</option>
+
+   <option value="madurai">Madurai</option>
+
+   <option value="nagercoil">Nagercoil</option>
+
+   <option value="tirucharapalli">Thirucharapalli</option>
+
+   <option value="kochi">Kochi</option>
+
+   <option value="kozhikode">Kozhikode</option>
+
+   <option value="thrissur">Thrissur</option>
+
+   <option value="bangalore">Bangalore</option>
+
+   <option value="mangalore">Mangalore</option>
+
+   <option value="hubli">Hubli</option>
+
+   <option value="mysore">Mysore</option>
+
+   <option value="other">Other</option>
+
+   </select>
+
+   </td>
+
+</tr>
+
+<tr>
+
+   <td class="tdLabel"><label for="state"><b>State</b></label></td>
+
+   <td class="tdInput"><select name="state" id="State" style="width:170px">
+
+   <option value=""></option>
+
+   <option value="ambur">Tamilnadu</option>
+
+   <option value="chennai">Bangalore</option>
+
+   <option value="coimbatore">Kerala</option>
+
+   <option value="other">Other</option>
+
+   </select>
+
+   </td>
+
+</tr>
+
+<tr>
+
+   <td class="tdLabel"><label for="Pin_Code" ><b>Pin Code</b></label></td>
+
+   <td class="tdInput"><input type="text" id="PinCode" name="Pin_Code"></td>
+
+</tr>
+
+<tr>
+
+   <td class="tdLabel"><label for="Phone_No" ><b>Phone Number</b></label></td>
+
+   <td class="tdInput"><input type="text" id="PhoneNo" name="Phone_No"></td>
+
+</tr>
+
+<tr>
+
+   <td class="tdLabel"><label for="DOB" ><b>Date of Birth</b></label></td>
+
+   <td class="tdInput"><input type="date" name="bday" id="bday" onchange="ageCalculation()">
+
+   </td>
+
+</tr>
+<tr>
+
+<td class="tdLabel" id="parentnamelabel"><label for="DOB"><b>Name of the Parent</b></label>  </td>
+
+<td ><input type="text" id="parent_name_inputbox" name="Parent_Name"></td>
+
+</tr>
+
+<tr>
+
+<td class="tdLabel" id="parentphonenolabel"><label for="DOB"><b>Parent Phone Number</b></label>  </td>
+
+<td ><input type="text" id="parent_phone_number_inputbox" name="Parent_Num"></td>
+
+</tr>
+
+<tr>
+
+   <td class="tdLabel"><l<label for="sex"><b>Sex</b></label></td>
+
+   <td class="tdInput"><input type="radio" id="Sex" name="sex" value="male"/>Male
+
+   <input type="radio" id="Sex" name="sex" value="female"/>Female
+
+   </td>
+
+</tr>
+
+<tr>
+
+   <td class="tdLabel"><l<label for="marital_status"><b>Marital Status</b></label></td>
+
+   <td class="tdInput"><input type="radio" id="Marital_Status" name="marital_status" value="Married"/>Married
+
+   <input type="radio" id="Marital_Status" name="marital_status" value="Single"/>Single
+
+   </td>
+
+</tr>
+
+
+ <tr>
+
+   <td class="tdLabel"><label for="Email_Addr" ><b>Email Address</b></label></td>
+
+   <td class="tdInput"><input type="text" id="EmailAddr" name="Email_Addr"></td>
+
+</tr>
+
+<tr>
+
+   <td class="tdLabel"><label for="Emerg_Num" ><b>Emergency Contact</b></label></td>
+
+   <td class="tdInput"><input type="text" id="EmergNum" name="Emerg_Num"></td>
+
+</tr>
+
+<tr>
+
+   <td class="tdLabel"><label for="Insurance_available"><b>Insurance Available</b></label></td>
+
+   <td class="tdInput"><input type="radio" id="Insurance_Available_yes" name="Insurance_available" value="yes" onclick="check()">Yes
+
+                       <input type="radio" id="Insurance_Available_no" name="Insurance_available" value="No" onclick="check()">No
+					   
+
+   </td>
+
+</tr>
+
+<tr>
+
+<td class="tdLabel" id="providerName"><label for="Insurance_available"><b>Insurance ProviderName</b></label>  </td>
+
+<td class="tdInput"><input type="text" id="providerNametextBox" name="Emerg_Num"></td>
+
+</tr>
+
+<tr>
+
+<td class="tdLabel" id="providerId"><label for="Insurance_available"><b>Policy ID</b></label>  </td>
+
+<td class="tdInput"><input type="text" id="providerIdtextBox" name="Emerg_Num"></td>
+
+</tr>
+   
+
+</table>
+
+</form>
+
+<script>
+
+function check() {
+
+var a = document.getElementById("Insurance_Available_yes").checked;
+
+var b=document.getElementById("Insurance_Available_no").checked;
+
+if(a==true){
+
+document.getElementById("providerName").style.display='block';
+
+document.getElementById("providerNametextBox").style.display='block';
+
+document.getElementById("providerId").style.display='block';
+
+document.getElementById("providerIdtextBox").style.display='block';
+
+}
+
+}
+
+</script>
+
+<script>
+
+function ageCalculation() {
+    var Bdate = document.getElementById('bday').value;
+	var Bday = +new Date(Bdate);
+	var age=~~((Date.now() - Bday) / (31557600000));
+	//alert(age);
+	
+	if(age<=18)
+	{
+	document.getElementById("parentnamelabel").style.display='block';
+
+	document.getElementById("parent_name_inputbox").style.display='block';
+
+	document.getElementById("parentphonenolabel").style.display='block';
+
+	document.getElementById("parent_phone_number_inputbox").style.display='block';
+	}  
+	
+    
+}
+</script>
+
+</body>
+
+</html>
